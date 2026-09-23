@@ -22,5 +22,8 @@ jobs:
           g++ --version
           cmake --version
 
+      - name: Check out repository
+        uses: actions/checkout@v5
+
       - name: "Lists files (notice: empty!)"
         run: ls -la
