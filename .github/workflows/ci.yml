@@ -18,7 +18,7 @@ jobs:
         run: sudo apt-get update && sudo apt-get install -y clang-format
 
       - name: Check formatting
-        run: clang-format --dry-run --Werror include/*.h src/*.cpp tests /*.cpp
+        run: clang-format --dry-run --Werror include/*.h src/*.cpp tests/*.cpp
 
   build-and-test:
     name: Build and test (Cmake + CTest )
@@ -30,7 +30,7 @@ jobs:
         run: cmake -S . -B build -DCMAKE_BUILD_TYPE=Debug
 
       - name: Build
-        run: cmake --build build --congif Debug -- -j$(nproc)
+        run: cmake --build build --config Debug -- -j$(nproc)
 
       - name: Run tests
         working-directory: build
