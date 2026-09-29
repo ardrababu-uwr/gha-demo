@@ -3,7 +3,7 @@ name: CI
 on: 
   push:
     branches: [main]
-  pull_reqeuest: 
+  pull_request: 
     branches: [main]
 
 jobs:
@@ -19,7 +19,7 @@ jobs:
 
       - name: Check formatting
         run: clang-format --dry-run --Werror include/*.h src/*.cpp tests /*.cpp
-        
+
   build-and-test:
     name: Build and test (Cmake + CTest )
     runs-on: ubuntu-latest
